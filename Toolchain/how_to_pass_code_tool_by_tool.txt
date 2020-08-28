@@ -1,0 +1,32 @@
+cpp conditonal.c -o conditonal.i      //cpp manje c pre-processor 
+gedit conditonal.i
+cc -S conditonal.i -o conditonal.s  // compiler
+gedit conditonal.s
+as conditonal.s -o conditonal.o   //assembler
+ld conditonal.o -lc -dyanamic-linker/lib/ld-linux.so.2 -o conditonal -e main   //LINKER LODER HAI LABRARY LOAD KARACHI AND EXE BaNuW.
+......................................................................................................................................
+
+ld conditional.o -lc -o demo -e main // lc labary ahe -e main //hai main entry point function pakad as // explicity deyach asel tr open honar nhi file ka tr loader nselya mul.
+size conditional.o //APALY FILE SIZE VAGRE
+objdump  -x conditonal.o // SYMBOLL TABLE 
+gcc conditonal.c -v(verbus mode) // MADHE APALE SAGLE EK PROGRAM LOAD KARTAN JE TOOL ALE KA TE BGTA YETE GPP NAV CC1 AHE SAGLE FILE DETO APALY DIST NHI MNUN YA MADHE TE SAGLE FILE YETETAT KONALA DEHAV MNL TR 
+
+
+====2N FILE RUN KARACH ===
+
+MIAN.C
+FACT.C
+
+cc main.c fact.c -o factorial
+./factorial
+
+cpp main.c -o main.i
+/usr/lib/gcc/5/cc1 main.i -o main.s
+as main.s -o main.o
+
+cpp fact.c -o fact .i
+/usr/lib/gcc/5/cc1 fact.i -o fact.s
+as fact.s -o fact.o
+
+ld fact.o main.o -ls -dynamic-linker /lib/ld---- -o factorial -e main
+./factorial 
